@@ -4,19 +4,24 @@ require __DIR__ . '/bootstrap.php';
 
 $faker = Faker\Factory::create('es_ES');
 
-echo $faker->firstname.PHP_EOL;
+$password = 'pruebas';
 
-echo $faker->lastname.PHP_EOL;
+for ($i = 0; $i < 1000; $i++) {
+    $date = $faker->dateTimeBetween('-45 years', '-15 years');
 
-echo $faker->name.PHP_EOL;
+    $username = $faker->unique()->username;
+    
+    $usuario = new Juanda\Entity\Usuario();
+    
+    $usuario->setNombre($username);
+    $usuario->setFechaNacimiento($date);
+    $usuario->setBloqueado(false);
+    
+    $entityManager->persist($usuario);
+}
 
-echo $faker->name.PHP_EOL;
+$entityManager->flush();
 
-echo $faker->address.PHP_EOL;
-
-echo $faker->address.PHP_EOL;
-
-echo $faker->text.PHP_EOL;
 
 
 //$usuario = new Juanda\Entity\Usuario();
