@@ -1,0 +1,9 @@
+{
+    "require": {
+        "symfony/console": "2.3.*@dev",
+        "doctrine/orm": "2.3.4"
+    },
+    "autoload": {
+        "psr-0": {"": "src/"}        
+    }
+}

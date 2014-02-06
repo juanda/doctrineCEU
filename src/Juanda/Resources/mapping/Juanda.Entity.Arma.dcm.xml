@@ -1,0 +1,16 @@
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                             xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                               http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+       <entity name="Juanda\Entity\Arma"  table="armas">
+           <id name="id" type="integer">
+               <generator strategy="AUTO" />
+           </id>
+
+           <field name="nombre" type="string" nullable="true"/>
+           <field name="descripcion" type="string" nullable="true" />                      
+           <field name="precio" type="integer" nullable="true" />
+           <field name="municion" type="integer" nullable="true" />           
+       </entity>
+</doctrine-mapping>
