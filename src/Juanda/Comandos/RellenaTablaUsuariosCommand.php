@@ -32,15 +32,16 @@ class RellenaTablaUsuariosCommand extends Command {
         for ($i = 0; $i < $numero; $i++) {
             $date = $faker->dateTimeBetween('-45 years', '-15 years');
 
-            $username = $faker->unique()->username;
+            $nombre = $faker->firstname;
 
             $usuario = new \Juanda\Entity\Usuario();
 
-            $usuario->setNombre($username);
+            $usuario->setNombre($nombre);
             $usuario->setFechaNacimiento($date);
             $usuario->setBloqueado(false);
+            $usuario->setPassword($password);
             
-            $output->writeln("usuario " . $username . " añadido");
+            $output->writeln("usuario " . $nombre . " añadido");
             
             $entityManager->persist($usuario);
         }
