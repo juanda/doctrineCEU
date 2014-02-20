@@ -136,4 +136,49 @@ class Usuario
     {
         return $this->username;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $etiquetas;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->etiquetas = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+    /**
+     * Add etiquetas
+     *
+     * @param \Juanda\Entity\Etiqueta $etiquetas
+     * @return Usuario
+     */
+    public function addEtiqueta(\Juanda\Entity\Etiqueta $etiquetas)
+    {
+        $this->etiquetas[] = $etiquetas;
+    
+        return $this;
+    }
+
+    /**
+     * Remove etiquetas
+     *
+     * @param \Juanda\Entity\Etiqueta $etiquetas
+     */
+    public function removeEtiqueta(\Juanda\Entity\Etiqueta $etiquetas)
+    {
+        $this->etiquetas->removeElement($etiquetas);
+    }
+
+    /**
+     * Get etiquetas
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getEtiquetas()
+    {
+        return $this->etiquetas;
+    }
 }
