@@ -12,7 +12,7 @@ class Usuario
     /**
      * @var string
      */
-    private $nombre;
+    private $username;
 
     /**
      * @var string
@@ -32,31 +32,7 @@ class Usuario
     /**
      * @var integer
      */
-    private $id;
-
-
-    /**
-     * Set nombre
-     *
-     * @param string $nombre
-     * @return Usuario
-     */
-    public function setNombre($nombre)
-    {
-        $this->nombre = $nombre;
-    
-        return $this;
-    }
-
-    /**
-     * Get nombre
-     *
-     * @return string 
-     */
-    public function getNombre()
-    {
-        return $this->nombre;
-    }
+    private $id;   
 
     /**
      * Set password
@@ -135,5 +111,29 @@ class Usuario
     public function getId()
     {
         return $this->id;
+    }    
+
+
+    /**
+     * Set username
+     *
+     * @param string $username
+     * @return Usuario
+     */
+    public function setUsername($username)
+    {
+        $this->username = $username;
+    
+        return $this;
+    }
+
+    /**
+     * Get username
+     *
+     * @return string 
+     */
+    public function getUsername()
+    {
+        return $this->username;
     }
 }
