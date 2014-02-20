@@ -11,7 +11,7 @@
         <field name="nombre" type="string" nullable="true" />
         <field name="color" type="string" nullable="true" />   
            
-        <many-to-one field="usuario" target-entity="Juanda\Entity\Usuario">
+        <many-to-one field="usuario" target-entity="Juanda\Entity\Usuario" inversed-by="etiqtuetas">
             <join-column name="id_usuario" referenced-column-name="id" />
         </many-to-one>                                     
     </entity>
