@@ -14,6 +14,7 @@
         <field name="bloqueado" type="boolean" nullable="true" />   
                    
         <one-to-many field="etiquetas" target-entity="Juanda\Entity\Etiqueta" mapped-by="usuario" />
+        <many-to-many field="grupos" target-entity="Juanda\Entity\Grupo" inversed-by="usuarios" />
                
     </entity>
 </doctrine-mapping>

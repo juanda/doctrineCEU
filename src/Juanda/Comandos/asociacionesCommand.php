@@ -36,9 +36,14 @@ class asociacionesCommand extends Command {
         $usuario = new \Juanda\Entity\Usuario();
         $usuario->setUsername('juanito');
        
-        $etiqueta->setUsuario($usuario);
-        $etiqueta2->setUsuario($usuario);
-        $etiqueta3->setUsuario($usuario);
+//        $etiqueta->setUsuario($usuario);
+//        $etiqueta2->setUsuario($usuario);
+//        $etiqueta3->setUsuario($usuario);
+        
+        $usuario->addEtiqueta($etiqueta);
+        $usuario->addEtiqueta($etiqueta2);
+        $usuario->addEtiqueta($etiqueta3);
+        
         
         $entityManager->persist($usuario); 
         $entityManager->persist($etiqueta);
